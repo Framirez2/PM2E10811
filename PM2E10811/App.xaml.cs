@@ -11,17 +11,21 @@ namespace PM2E10811
     public partial class App : Application
     {
 
-        static dbsitios basedatos;
+        static Controllers.DBproc dBProc;
 
-        public static dbsitios BaseDatos
+        public static Controllers.DBproc Instancia
         {
             get
             {
-                if (basedatos == null)
+                if (dBProc == null)
                 {
-                    basedatos = new dbsitios(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SitiosDB.db3"));
+                    String dbname = "SitiosDB.db3";
+                    String dbpath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                    String dbfulp = Path.Combine(dbpath, dbname);
+                    dBProc = new Controllers.DBproc(dbfulp);
+                   
                 }
-                return basedatos;
+                return dBProc;
             }
         }
 

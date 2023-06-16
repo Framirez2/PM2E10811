@@ -124,8 +124,8 @@ namespace PM2E10811
             }
             else
             {
-                var sitio = new sitios { imagen = imageToSave, longitud = txtlatitud.Text, latitud = txtlongitud.Text, descripcion = txtdescripcion.Text };
-                var resultado = await App.BaseDatos.sitioSave(sitio);
+                var sitio = new Sitios { imagen = imageToSave, longitud = txtlatitud.Text, latitud = txtlongitud.Text, descripcion = txtdescripcion.Text };
+                var resultado = await App.Instancia.sitioSave(sitio);
 
                 if (resultado != 0)
                 {

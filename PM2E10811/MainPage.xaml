@@ -9,10 +9,6 @@
 
             <StackLayout Background="#f2f2f2">
 
-                <Frame BackgroundColor="#fab617" Padding="5" CornerRadius="0">
-                    <Label Text="Examen PM2 N°1" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
-                </Frame>
-
                 <Label HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="18">Imagen de sitio</Label>
 
                 <Image x:Name="img"  BackgroundColor="#fafaf7" WidthRequest="180" HeightRequest="180" Margin="30,0,30,10" HorizontalOptions="Center">
@@ -40,6 +36,11 @@
                 <Button Text="Agregar" x:Name="btnAgregar" Margin="30,0,30,0" Background="#fab617" TextColor="White" Clicked="btnagregars_Clicked" CornerRadius="4"/>
                 <Button Text="Listar Sitios" x:Name="btnlistar"  Margin="30,0,30,0" Background="darkgreen" TextColor="White" Clicked="btnlistar_Clicked" CornerRadius="4"/>
                 <Button Text="Salir" x:Name="btnSalir" Margin="30,0,30,10" Background="#B70D0D" TextColor="White" Clicked="btnsalir_Clicked" CornerRadius="4"/>
+
+
+                <Frame BackgroundColor="#fab617" Padding="5" CornerRadius="0">
+                    <Label Text="Examen PM2 N°1" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
+                </Frame>
 
             </StackLayout>
         </ScrollView>

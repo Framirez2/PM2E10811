@@ -15,7 +15,7 @@ namespace PM2E10811.Views
     
     public partial class listarsitios : ContentPage
     {
-        private sitios sitio;
+        private Sitios sitio;
 
         public listarsitios()
         {
@@ -29,7 +29,7 @@ namespace PM2E10811.Views
        
         private void liestasistios_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-           sitio = (sitios)e.Item;
+           sitio = (Sitios)e.Item;
            
         }
       
@@ -49,7 +49,7 @@ namespace PM2E10811.Views
         {
             base.OnAppearing();
 
-            listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
+            listasitios.ItemsSource = await App.Instancia.ObtenerlistadoSitio();
         }
 
         //Evento para el boton de eliminar 
@@ -57,13 +57,13 @@ namespace PM2E10811.Views
         {
             try
             {
-                var eliminar = await App.BaseDatos.eliminarsitio(sitio);
+                var eliminar = await App.Instancia.eliminarsitio(sitio);
 
 
                 if (eliminar != 0)
                 {
                     await DisplayAlert("Advertencia", "Sitio eliminado con exito", "Aceptar");
-                    listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
+                    listasitios.ItemsSource = await App.Instancia.ObtenerlistadoSitio();
 
                 }
                 else
