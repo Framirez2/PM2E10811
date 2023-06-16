@@ -52,8 +52,8 @@ namespace PM2E10811.Views
             listasitios.ItemsSource = await App.BaseDatos.ObtenerlistadoSitio();
         }
 
-
-        private async void btneliminacasa_Clicked(object sender, EventArgs e)
+        //Evento para el boton de eliminar 
+        private async void btneliminarsitio_Clicked(object sender, EventArgs e)
         {
             try
             {

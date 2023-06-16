@@ -64,6 +64,7 @@ namespace PM2E10811
         }
 
         byte[] imageToSave;
+        //void para tomar la foto
         private async void AddImg(object sender, EventArgs e)
         {
             try
@@ -76,6 +77,7 @@ namespace PM2E10811
                     SaveToAlbum = true
                 });
 
+                //se muestra la ubicacion donde se guardo la foto
                 await DisplayAlert("Ubicacion de la foto: ", takepic.Path, "Aceptar");
 
                 if (takepic != null)
@@ -105,12 +107,13 @@ namespace PM2E10811
 
         private void btnsalir_Clicked(object sender, EventArgs e)
         {
-            //mandamos un sentesia para que mate el proseso 
+            // Mata el proceso para salir
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private async void btnagregars_Clicked(object sender, EventArgs e)
         {
+            //Validaciones en los campos para evitar campos vacios
             if (imageToSave == null)
             {
                 await DisplayAlert("Aviso!", "Ingrese una imagen del sitio", "Aceptar");
@@ -126,7 +129,7 @@ namespace PM2E10811
 
                 if (resultado != 0)
                 {
-                    await DisplayAlert("Aviso", "¡Sitio ingresado con exito!", "Aceptar");
+                    await DisplayAlert("Aviso", "Sitio ingresado con exito!", "Aceptar");
                     txtdescripcion.Text = "";
                     img.Source = "anadir.png";
                     imageToSave = null;
